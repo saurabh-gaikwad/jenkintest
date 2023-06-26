@@ -8,9 +8,10 @@ pipeline {
             }
         }
 
-        stage('mvn build')
+        stage('mvn build'){
             steps{
                 sh "mvn clean install"
             }
+        }
     }
 }
