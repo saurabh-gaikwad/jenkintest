@@ -7,5 +7,10 @@ pipeline {
                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/saurabh-gaikwad/jenkintest']])
             }
         }
+
+        stage('mvn build')
+            steps{
+                sh "mvn clean install"
+            }
     }
 }
